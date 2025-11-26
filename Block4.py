@@ -1,6 +1,8 @@
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use('Agg')  # safe backend for Streamlit
 
 # --- Seite konfigurieren ---
 st.set_page_config(page_title="h_r – Verlusthöhe Tool", layout="wide")
@@ -23,15 +25,15 @@ Q_point    = st.sidebar.slider("Q (Punkt) [m³/s]", 0.0, 0.3, 0.15, 0.05)
 # --- Werte für Plot ---
 Q_range = np.linspace(0, 0.5, 200)
 lambda_ref = 0.03
-L_ref = 30
-D_ref = 0.3
+L_ref = 50
+D_ref = 0.25
 
 ref_curve = delta_H(lambda_ref, L_ref, D_ref, Q_range)
 var_curve = delta_H(lambda_val, L_val, D_val, Q_range)
-hr_point = delta_H(lambda_val, L_val, D_val, Q_point)
+hr_point = float(delta_H(lambda_val, L_val, D_val, Q_point))  # ensure scalar
 
 # --- Plot ---
-fig, ax = plt.subplots(figsize=(10,5))  # flacherer Plot, passt besser auf Bildschirm
+fig, ax = plt.subplots(figsize=(10,5))
 
 # Formel oben
 fig.suptitle(
@@ -50,7 +52,7 @@ ax.plot(Q_point, hr_point, "ro", markersize=8)
 # Label Punkt
 ax.text(
     Q_point,
-    hr_point + 0.03*np.max(ref_curve),  # Abstand proportional Plot
+    hr_point + 0.03*np.max(ref_curve),
     f"Q = {Q_point:.2f} m³/s\n$h_r$ = {hr_point:.1f} m",
     fontsize=12,
     color="red",
@@ -59,7 +61,6 @@ ax.text(
     bbox=dict(facecolor="white", edgecolor="red", boxstyle="round,pad=0.2")
 )
 
-# Achsen und Limits fixieren
 ax.set_xlabel("Durchfluss Q [m³/s]")
 ax.set_ylabel("Verlusthöhe $h_r$ [m]")
 ax.grid(True)
@@ -69,6 +70,8 @@ ax.set_ylim(0, 20)
 
 # --- Plot anzeigen ---
 st.pyplot(fig)
+plt.close(fig)
+
 
 
 
