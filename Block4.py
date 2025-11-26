@@ -71,9 +71,3 @@ ax.set_ylim(0, 20)
 # --- Plot anzeigen ---
 st.pyplot(fig)
 plt.close(fig)
-
-
-
-
-
-
