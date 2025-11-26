@@ -1,5 +1,6 @@
 import streamlit as st
 import numpy as np
+import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="h_r – Verlusthöhe Tool", layout="wide")
 
@@ -56,5 +57,6 @@ ax.legend()
 
 
 st.pyplot(fig)
+
 
 
