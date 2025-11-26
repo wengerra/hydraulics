@@ -1,4 +1,4 @@
-import streamlit as s3
+import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -69,6 +69,7 @@ ax.set_ylim(0, 50)
 
 # --- Plot anzeigen ---
 st.pyplot(fig)
+
 
 
 
