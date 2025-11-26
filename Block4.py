@@ -1,8 +1,6 @@
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib
-matplotlib.use('Agg')  # safe backend for Streamlit
 
 # --- Seite konfigurieren ---
 st.set_page_config(page_title="h_r – Verlusthöhe Tool", layout="wide")
@@ -71,3 +69,4 @@ ax.set_ylim(0, 20)
 # --- Plot anzeigen ---
 st.pyplot(fig)
 plt.close(fig)
+
