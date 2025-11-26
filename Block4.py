@@ -23,8 +23,8 @@ Q_point    = st.sidebar.slider("Q (Punkt) [m³/s]", 0.0, 0.3, 0.24, 0.01, format
 # --- Werte für Plot ---
 Q_range = np.linspace(0, 0.5, 200)
 lambda_ref = 0.04
-L_ref = 50
-D_ref = 0.3
+L_ref = 80
+D_ref = 0.4
 
 ref_curve = delta_H(lambda_ref, L_ref, D_ref, Q_range)
 var_curve = delta_H(lambda_val, L_val, D_val, Q_range)
@@ -69,6 +69,7 @@ ax.set_ylim(0, 50)
 
 # --- Plot anzeigen ---
 st.pyplot(fig)
+
 
 
 
