@@ -15,14 +15,14 @@ def delta_H(lmbda, L, D, Q):
 
 # --- Sidebar Sliders ---
 st.sidebar.header("Parameter")
-lambda_val = st.sidebar.slider("λ (Reibungsbeiwert)", 0.001, 0.050, 0.030, 0.001, format="%.3f")
+lambda_val = st.sidebar.slider("λ (Reibungsbeiwert)", 0.001, 0.05, 0.04, 0.001, format="%.3f")
 L_val      = st.sidebar.slider("L (Rohrlänge) [m]", 10, 100, 50, 5)
 D_val      = st.sidebar.slider("D (Durchmesser) [m]", 0.25, 0.5, 0.3, 0.05, format="%.2f")
 Q_point    = st.sidebar.slider("Q (Punkt) [m³/s]", 0.0, 0.3, 0.25, 0.01, format="%.2f")
 
 # --- Werte für Plot ---
 Q_range = np.linspace(0, 0.5, 200)
-lambda_ref = 0.03
+lambda_ref = 0.04
 L_ref = 50
 D_ref = 0.3
 
@@ -69,6 +69,7 @@ ax.set_ylim(0, 50)
 
 # --- Plot anzeigen ---
 st.pyplot(fig)
+
 
 
 
