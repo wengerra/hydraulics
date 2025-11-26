@@ -50,7 +50,7 @@ ax.plot(Q_point, hr_point, "ro", markersize=8)
 # Label Punkt
 ax.text(
     Q_point,
-    hr_point + 0.03*np.max(ref_curve),  # Abstand proportional Plot
+    hr_point + 0.05*np.max(ref_curve),  # Abstand proportional Plot
     f"Q = {Q_point:.2f} m³/s\n$h_r$ = {hr_point:.1f} m",
     fontsize=12,
     color="red",
@@ -69,6 +69,7 @@ ax.set_ylim(0, 25)
 
 # --- Plot anzeigen ---
 st.pyplot(fig)
+
 
 
 
