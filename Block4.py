@@ -39,8 +39,9 @@ fig.suptitle(
     r'= \lambda \cdot \frac{L}{D} \cdot \frac{\left(\frac{4Q}{\pi D^{2}}\right)^{2}}{2g} '
     r'= \frac{8 \cdot \lambda \cdot L \cdot Q^2}{g \cdot \pi^2 \cdot D^5}$',
     fontsize=16,
-    y=0.95
+    y=0.99
 )
+fig.tight_layout(rect=[0, 0, 1, 0.92])
 
 # Kurven
 ax.plot(Q_range, ref_curve, "k--", label="Referenzkurve")
@@ -69,6 +70,7 @@ ax.set_ylim(0, 25)
 
 # --- Plot anzeigen ---
 st.pyplot(fig)
+
 
 
 
