@@ -16,9 +16,9 @@ def delta_H(lmbda, L, D, Q):
 # --- Sidebar Sliders ---
 st.sidebar.header("Parameter")
 lambda_val = st.sidebar.slider("λ (Reibungsbeiwert)", 0.01, 0.05, 0.03, 0.001)
-L_val      = st.sidebar.slider("L (Rohrlänge) [m]", 10, 50, 30, 5)
-D_val      = st.sidebar.slider("D (Durchmesser) [m]", 0.25, 0.5, 0.5, 0.025)
-Q_point    = st.sidebar.slider("Q (Punkt) [m³/s]", 0.0, 0.3, 0.25, 0.025)
+L_val      = st.sidebar.slider("L (Rohrlänge) [m]", 10, 100, 50, 5)
+D_val      = st.sidebar.slider("D (Durchmesser) [m]", 0.1, 0.5, 0.25, 0.05)
+Q_point    = st.sidebar.slider("Q (Punkt) [m³/s]", 0.0, 0.3, 0.15, 0.05)
 
 # --- Werte für Plot ---
 Q_range = np.linspace(0, 0.5, 200)
@@ -64,11 +64,12 @@ ax.set_xlabel("Durchfluss Q [m³/s]")
 ax.set_ylabel("Verlusthöhe $h_r$ [m]")
 ax.grid(True)
 ax.legend()
-ax.set_xlim(0, 0.5)
-ax.set_ylim(0, 25)
+ax.set_xlim(0, 0.4)
+ax.set_ylim(0, 15)
 
 # --- Plot anzeigen ---
 st.pyplot(fig)
+
 
 
 
