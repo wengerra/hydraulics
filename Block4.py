@@ -65,10 +65,11 @@ ax.set_ylabel("Verlusthöhe $h_r$ [m]")
 ax.grid(True)
 ax.legend()
 ax.set_xlim(0, 0.4)
-ax.set_ylim(0, 15)
+ax.set_ylim(0, 20)
 
 # --- Plot anzeigen ---
 st.pyplot(fig)
+
 
 
 
