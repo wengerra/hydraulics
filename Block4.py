@@ -1,7 +1,3 @@
-import streamlit as st
-import numpy as np
-import matplotlib.pyplot as plt
-
 st.set_page_config(page_title="h_r – Verlusthöhe Tool", layout="wide")
 
 g = 9.81
@@ -54,5 +50,6 @@ ax.set_xlabel("Durchfluss Q [m³/s]")
 ax.set_ylabel("Verlusthöhe $h_r$ [m]")
 ax.grid(True)
 ax.legend()
+
 
 st.pyplot(fig)
