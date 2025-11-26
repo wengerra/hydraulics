@@ -41,7 +41,6 @@ fig.suptitle(
     fontsize=16,
     y=2
 )
-fig.tight_layout(rect=[0, 0, 1, 0.94])
 
 # Kurven
 ax.plot(Q_range, ref_curve, "k--", label="Referenzkurve")
@@ -70,6 +69,7 @@ ax.set_ylim(0, 25)
 
 # --- Plot anzeigen ---
 st.pyplot(fig)
+
 
 
 
