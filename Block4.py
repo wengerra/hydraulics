@@ -19,7 +19,7 @@ def delta_H(lmbda, L, D, Q):
 
 # --- Sidebar Sliders ---
 st.sidebar.header("Parameter")
-lambda_val = st.sidebar.slider("λ", 0.01, 0.05, 0.04, 0.001, format="%.3f")
+lambda_val = st.sidebar.slider("λ [-]", 0.01, 0.05, 0.04, 0.001, format="%.3f")
 L_val      = st.sidebar.slider("L [m]", 10, 100, 80, 5)
 D_val      = st.sidebar.slider("D [m]", 0.25, 0.3, 0.28, 0.01, format="%.2f")
 Q_point    = st.sidebar.slider("Q [m³/s]", 0.0, 0.3, 0.24, 0.01, format="%.2f")
@@ -73,6 +73,7 @@ ax.set_ylim(0, 50)
 
 # --- Plot anzeigen ---
 st.pyplot(fig)
+
 
 
 
