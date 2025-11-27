@@ -3,7 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # --- Seite konfigurieren ---
-st.set_page_config(page_title="h_r – Verlusthöhe Tool", layout="wide")
+st.set_page_config(page_title="Darcy-Weisbach", layout="wide")
+st.title("Kontinuierliche Verluste nach Darcy-Weisbach")
 
 plt.rcParams.update({'font.size': 12})
 g = 9.81
@@ -69,6 +70,7 @@ ax.set_ylim(0, 50)
 
 # --- Plot anzeigen ---
 st.pyplot(fig)
+
 
 
 
